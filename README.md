@@ -28,3 +28,16 @@ req.body:
 returns 
 - base price + info of a property
 - total calculated price
+```
+{
+  basePrice: 190,
+  cityTax: 30,
+  cleaningFee: 30,
+  serviceFee: 0.07,
+  longStayDiscount: 0,
+  calendar: [
+    {date: "10-24-18", dayPriceModifier: 0, available: true},
+    ...
+  ]
+}
+```
