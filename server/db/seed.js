@@ -2,9 +2,7 @@ const db = require('./db.js');
 
 const seed = function(n) {
 
-  const genRandomInt = function(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  };
+  const genRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
   const props = [];
   const cals = [];
@@ -15,10 +13,10 @@ const seed = function(n) {
       basePrice: genRandomInt(10, 100) * 500,
       cityTax: genRandomInt(0, 1) * genRandomInt(1, 3) * 1000,
       cleaningFee: genRandomInt(0, 1) * genRandomInt(0, 5) * 500,
-      serviceFee: genRandomInt(5,20) / 100,
+      serviceFee: genRandomInt(5, 20) / 100,
       longStayDiscount: genRandomInt(0, 1) * genRandomInt(0, 1) * genRandomInt(85, 100) / 100,
       minStay: genRandomInt(1, 2),
-    }
+    };
 
     props.push(prop);
   }
@@ -30,19 +28,19 @@ const seed = function(n) {
 
       const getDayPriceMod = function() {
         if (date.getDay() === 6 || date.getDay() === 5) {
-          return genRandomInt(0,1) * genRandomInt(1, 5) * 1000;
+          return genRandomInt(0, 1) * genRandomInt(1, 5) * 1000;
         } else {
           return 0;
         }
-      }
+      };
 
       let cal = {
         id: (i - 1) * 100 + j,
         date: date.toISOString(),
         dayPriceModifier: getDayPriceMod(),
-        available: Boolean(1 - genRandomInt(0,1) * genRandomInt(0,1)),
+        available: Boolean(1 - genRandomInt(0, 1) * genRandomInt(0, 1)),
         PropertyId: i
-      }
+      };
 
       cals.push(cal);
     }
@@ -54,8 +52,8 @@ const seed = function(n) {
       db.Calendar.bulkCreate(cals)
         .then(() => {
           console.log('calendar seeding success');
-        })
-    })
-}
+        });
+    });
+};
 
 seed(100);
