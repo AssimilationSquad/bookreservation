@@ -1,15 +1,15 @@
-var db = require('./db.js');
+const db = require('./db.js');
 
-var seed = function(n) {
+const seed = function(n) {
 
-  var genRandomInt = function(min, max) {
+  const genRandomInt = function(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   };
 
-  var props = [];
-  var cals = [];
+  const props = [];
+  const cals = [];
 
-  for (var i = 1; i <= n; i++) {
+  for (let i = 1; i <= n; i++) {
     let prop = {
       id: i,
       basePrice: genRandomInt(10, 100) * 500,
@@ -28,7 +28,7 @@ var seed = function(n) {
       let date = new Date('2018-11-01');
       date.setDate(date.getDate() + j);
 
-      var getDayPriceMod = function() {
+      const getDayPriceMod = function() {
         if (date.getDay() === 6 || date.getDay() === 5) {
           return genRandomInt(0,1) * genRandomInt(1, 5) * 1000;
         } else {
