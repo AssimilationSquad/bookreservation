@@ -11,7 +11,7 @@ th {
 td {
   width: 41px;
   height: 40px;
-  border: 1px double rgb(228, 231, 231);
+  border: 1px solid rgb(228, 231, 231);
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   font-weight: 700;
   height: 41px;
@@ -43,6 +43,11 @@ table#calendar {
 div#calWrapper {
   display: inline-block;
   background-color: white;
+  z-index: 1;
+  position: absolute;
+  border: 1px solid rgb(228, 231, 231);
+  border-radius: 3px;
+  padding: 24px;
 }
 
 div#calTop {
