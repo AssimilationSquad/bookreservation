@@ -1,0 +1,92 @@
+#outerBox {
+  height: 363px;
+  width: 374px;
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #484848;
+  font-size: 14px;
+  background-color: #fff;
+  padding-left: 24px;
+  padding-right: 24px;
+  border: 1px solid #e4e4e4;
+}
+
+#topBox {
+  height: 65px;
+  border-bottom: 1px solid #EBEBEB;
+}
+
+#priceBox {
+  margin-top: 16px;
+}
+
+span#price {
+  line-height: 26px;
+  letter-spacing: normal;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  color: rgb(72, 72, 72);
+  font-weight: 800;
+  font-size: 22px;
+
+}
+
+span#perNight {
+  font-weight: 600;
+    margin: 0px;
+    word-wrap: break-word;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: normal;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    text-transform: undefined;
+    color: #484848;
+    display: inline;
+}
+
+label {
+  font-weight: 600;
+  margin: 0px;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: normal;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  color: #484848;
+  height: 22px;
+  padding-bottom: 4px;
+}
+
+input {
+  height: 32px;
+}
+
+#formFields {
+  height: 190px;
+  /* border: 1px dotted #e4e4e4; */
+}
+
+#datesInput {
+  height: 40px;
+  border: 1px solid #EBEBEB;
+  border-radius: 2px;
+}
+
+#fromDate {
+  width: 150px;
+  display: inline;
+  padding: 8px;
+}
+
+#toDate {
+  width: 150px;
+  display: inline;
+}
+
+#guestsInput {
+  height: 40px;
+  border: 1px solid #EBEBEB;
+  border-radius: 2px;
+}
+
+#submitButton {
+  height: 50px;
+  border: 1px dotted #e4e4e4;
+}
