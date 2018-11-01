@@ -1,0 +1,73 @@
+th {
+  width: 41px;
+  height: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #484848;
+
+}
+
+td {
+  width: 41px;
+  height: 40px;
+  border: 1px double rgb(228, 231, 231);
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  height: 41px;
+  /* line-height: 12px; */
+  text-align: center;
+  color: rgb(216, 216, 216);
+
+}
+
+strong {
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: bold;
+  color: rgb(72, 72, 72) !important;
+  font-size: 18px !important;
+  text-align: center !important;
+  display: inline-block;
+}
+
+div#monthYear {
+  text-align: center;
+
+}
+
+table#calendar {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+div#calWrapper {
+  display: inline-block;
+  background-color: white;
+}
+
+div#calTop {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+button.change-month {
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(228, 231, 231);
+  border-image: initial;
+  border-radius: 3px;
+  padding: 6px 9px;
+  width: 36px;
+  height: 36px;
+}
+
+button#left {
+}
+
+button#right {
+}
+
+table {
+  border-spacing: 0px;
+}

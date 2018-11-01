@@ -1,0 +1,82 @@
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+div {
+  /* border: 1px solid grey; */
+}
+
+span {
+  /* border: 1px solid grey; */
+  font-weight: 600;
+  /* margin: 0px; */
+  font-size: 16px;
+  line-height: 30px;
+  /* letter-spacing: normal; */
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  color: #484848;
+}
+
+div#guests-box {
+  padding-right: 16px;
+  padding-left: 16px;
+  width: 272px;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+div.age-group {
+  display: flex; 
+  flex-flow: row nowrap;
+  /* text-align: left;  */
+  margin-top: 16px;
+  margin-bottom: 16px;
+  height: 32px;
+  justify-content: space-between;
+}
+
+button#circle {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  border-color: rgb(0, 132, 137);
+}
+
+
+span.age-left {
+  /* vertical-align: middle; */
+  flex-grow: 1;
+}
+
+span.age-right {
+  /* float: right; */
+  width: 120px;
+  /* display: table-cell; */
+  /* vertical-align: middle; */
+  display: flex;
+  justify-content: space-between;
+}
+
+div#max-guests {
+  word-wrap: break-word;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: normal;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  color: #484848;
+  font-weight: 400;
+}
+
+#close {
+  display: flex;
+  justify-content: flex-end;
+  color: var(--color-text-link, #008489);
+  font-family: var(--font-font_family, Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif);
+}
+
+div.inline {
+  /* display: table-cell; */
+  width: 32%;
+}
