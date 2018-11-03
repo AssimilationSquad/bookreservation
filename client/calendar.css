@@ -21,6 +21,10 @@ td {
 
 }
 
+td:hover {
+  background: rgb(228, 231, 231);
+}
+
 strong {
   font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: bold;

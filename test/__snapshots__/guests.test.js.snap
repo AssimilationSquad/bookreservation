@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Guests /> looks the same as before 1`] = `
+<div
+  id="guests-box"
+>
+  <div
+    className="age-group"
+    id="adults"
+  >
+    <span
+      className="age-left"
+    >
+      Adults
+    </span>
+    <span
+      className="age-right"
+    >
+      <button
+        className="circle minus"
+      >
+        -
+      </button>
+      <span>
+        1
+      </span>
+      <button
+        className="circle plus"
+      >
+        +
+      </button>
+    </span>
+  </div>
+  <div
+    className="age-group"
+    id="children"
+  >
+    <span
+      className="age-left"
+    >
+      Children
+    </span>
+    <span
+      className="age-right"
+    >
+      <button
+        className="circle minus"
+      >
+        -
+      </button>
+      <span>
+        0
+      </span>
+      <button
+        className="circle plus"
+      >
+        +
+      </button>
+    </span>
+  </div>
+  <div
+    className="age-group"
+    id="infants"
+  >
+    <span
+      className="age-left"
+    >
+      Infants
+    </span>
+    <span
+      className="age-right"
+    >
+      <button
+        className="circle minus"
+      >
+        -
+      </button>
+      <span>
+        0
+      </span>
+      <button
+        className="circle plus"
+      >
+        +
+      </button>
+    </span>
+  </div>
+  <div
+    id="max-guests"
+  >
+    3 guests maximum. Infants don’t count toward the number of guests.
+  </div>
+  <div
+    id="close"
+  >
+    <span>
+      Close
+    </span>
+  </div>
+</div>
+`;
