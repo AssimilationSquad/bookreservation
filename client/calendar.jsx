@@ -4,12 +4,17 @@ import './calendar.css';
 class Calendar extends Component {
   constructor(props) {
     super(props);
-    this.month = 9;
-    this.year = 2018;
     this.monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
       'July', 'August', 'September', 'October', 'November', 'December'
     ];
     this.header = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+
+    this.renderCal = this.renderCal.bind(this);
+    this.renderRow = this.renderRow.bind(this);
+    this.renderSquare = this.renderSquare.bind(this);
+    this.renderHeader = this.renderHeader.bind(this);
+    this.renderMonthYear = this.renderMonthYear.bind(this);
+    this.makeMatrix = this.makeMatrix.bind(this);
 
     this.state = {
       matrix: [ [ null, 1, 2, 3, 4, 5, 6 ],
@@ -19,18 +24,48 @@ class Calendar extends Component {
         [ 28, 29, 30, 31 ] ]
     };
 
-    this.renderCal = this.renderCal.bind(this);
-    this.renderRow = this.renderRow.bind(this);
-    this.renderSquare = this.renderSquare.bind(this);
-    this.renderHeader = this.renderHeader.bind(this);
-    this.renderMonthYear = this.renderMonthYear.bind(this);
+    
+  }
+
+  componentDidMount() {
+    this.setState({
+      matrix: this.makeMatrix()
+    });
+  }
+
+  makeMatrix() {
+    let firstDate = new Date(this.props.year, this.props.month);
+    let dayOfStart = firstDate.getDay();
+    let dateOfEnd = new Date(this.props.year, this.props.month + 1, 0).getDate();
+    let flatCal = [];
+
+    for (let i = 0; i < dayOfStart; i++) {
+      flatCal.push(null);
+    }
+
+    for (let i = 1; i <= dateOfEnd; i++) {
+      flatCal.push(i);
+    }
+
+    let matrixize = function (flatArray, numOfCols) {
+      return flatArray.reduce((acc, el, index) => {
+        if (index % numOfCols === 0) {
+          acc.push([el]);
+        } else {
+          acc[acc.length - 1].push(el);
+        }
+        return acc;
+      }, []);
+    };
+
+    return matrixize(flatCal, 7);
   }
 
   renderMonthYear() {
     return (
       <div id="monthYear">
         <strong>
-          {this.monthNames[this.month] + ' ' + this.year}
+          {this.monthNames[this.props.month] + ' ' + this.props.year}
         </strong>
       </div>
     );
@@ -40,8 +75,8 @@ class Calendar extends Component {
     return (
       <thead>
         <tr>
-          {header.map((day) => {
-            return <th>{day}</th>;
+          {header.map((day, index) => {
+            return <th key={index}>{day}</th>;
           })}
         </tr>
       </thead>
@@ -56,17 +91,17 @@ class Calendar extends Component {
     );
   }
 
-  renderRow(row) {
+  renderRow(row, index) {
     return (
-      <tr>
+      <tr key={index}>
         {row.map(this.renderSquare)}
       </tr>
     );
   }
 
-  renderSquare(date) {
+  renderSquare(date, index) {
     return (
-      <td>
+      <td key={index}>
         {date}
       </td>
     );
@@ -76,9 +111,25 @@ class Calendar extends Component {
     return (
       <div id="calWrapper">
         <div id="calTop">
-          <button className="change-month" id="left">L</button>
+          <button 
+            className="change-month" 
+            onClick={(e) => {
+              e.preventDefault();
+              this.props.handleMonthChange(this.props.year, this.props.month - 1);
+            }} 
+            id="left">
+            L
+          </button>
           {this.renderMonthYear()}
-          <button className="change-month" id="right">R</button>
+          <button 
+            className="change-month" 
+            onClick={(e) => { 
+              e.preventDefault();
+              this.props.handleMonthChange(this.props.year, this.props.month + 1); 
+            }} 
+            id="right">
+            R
+          </button>
         </div>
         
         <table id="calendar">
