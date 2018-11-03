@@ -14,7 +14,7 @@ class Guests extends Component {
           <span className="age-left">Adults</span>
           <span className="age-right">
             <button className="circle minus">-</button>
-            <span>1</span>
+            <span>{this.props.adults}</span>
             <button className="circle plus">+</button>
           </span>
         </div>
@@ -22,7 +22,7 @@ class Guests extends Component {
           <span className="age-left">Children</span>
           <span className="age-right">
             <button className="circle minus">-</button>
-            <span>0</span>
+            <span>{this.props.children}</span>
             <button className="circle plus">+</button>
           </span>
         </div>
@@ -30,7 +30,7 @@ class Guests extends Component {
           <span className="age-left">Infants</span>
           <span className="age-right">
             <button className="circle minus">-</button>
-            <span>0</span>
+            <span>{this.props.infants}</span>
             <button className="circle plus">+</button>
           </span>
         </div>
