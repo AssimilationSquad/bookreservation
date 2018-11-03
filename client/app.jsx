@@ -6,6 +6,7 @@ import Guests from './guests.jsx';
 class App extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       roomId: 2,
       // year: 2018,
@@ -91,7 +92,7 @@ class App extends Component {
   }
 
   renderGuests() {
-    return this.state.renderedOverlay === 'guests' ? <Guests /> : null;
+    return this.state.renderedOverlay === 'guests' ? <Guests {...this.state.guests} /> : null;
   }
 
   render() {

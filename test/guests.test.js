@@ -3,24 +3,50 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 
 import Guests from '../client/guests.jsx';
-import Calendar from '../client/calendar.jsx';
 
 
 describe('<Guests />', () => {
+  let props;
+  let mountedGuests;
+  const guests = () => {
+    if (!mountedGuests) {
+      mountedGuests = mount(
+        <Guests {...props} />
+      );
+    }
+    return mountedGuests;
+  };
+
+  beforeEach(() => {
+    props = {
+      adults: 1,
+      children: 0,
+      infants: 0
+    };
+    mountedGuests = undefined;
+  });
+
   it('renders 6 <div> components', () => {
-    const wrapper = shallow(<Guests />);
+    const wrapper = shallow(<Guests {...props} />);
     expect(wrapper.find('div')).toHaveLength(6);
   });
 
-  it('looks the same as before', () => {
-    const tree = renderer.create(<Guests />).toJSON();
+  xit('looks the same as before', () => {
+    const tree = renderer.create(<Guests {...props}/>).toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  xit("contains everything else that gets rendered", () => {
+    const divs = guests().find("div");
+    const wrappingDiv = divs.first();
+
+    expect(wrappingDiv.children()).toEqual(guests().children());
+  });
+
+  it("should display number of adults that were passed as props", () => {
+    const div = guests().find('div.age-group#adults').first();
+    console.log(Object.keys(div));
+    // find the span with the adult and see if it's 1;
   });
 });
 
-describe('<Calendar />', () => {
-  it('renders a calendar', () => {
-    const wrapper = shallow(<Calendar year="2018" month="10" handleMonthChange={() => {}} />);
-    expect(wrapper.find('td').length).toBeGreaterThan(30);
-  });
-});
