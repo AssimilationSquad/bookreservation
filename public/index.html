@@ -4,7 +4,17 @@
     <title>Booking Module</title>
   </head>
   <body>
-    <div id="app">Hello World!</div>
+    <div id="book">Hello World!</div>
+    
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
     <script type="text/javascript" src="/bundle.js"></script>
+    <script>
+      ReactDOM.render(
+        React.createElement(Book),
+        document.getElementById('book')
+      );
+    </script>
   </body>
 </html>
