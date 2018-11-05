@@ -134,7 +134,7 @@ class Calendar extends Component {
         
         <table id="calendar">
           {this.renderHeader(this.header)}
-          {this.renderCal(this.state.matrix)}
+          {this.renderCal(this.makeMatrix())}
         </table>
       </div>
     );
