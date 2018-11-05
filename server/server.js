@@ -4,10 +4,18 @@ const bodyParser = require('body-parser');
 const db = require('./db/db.js');
 const Op = require('sequelize').Op;
 const path = require('path');
+const morgan = require('morgan');
 
-app.use(express.static(path.join(__dirname, '../', 'public')));
+
+app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+app.use(express.static(path.join(__dirname, '../', 'public')));
+app.use('/rooms', express.static(path.join(__dirname, '../', 'public')));
+app.get('/rooms/:roomId', (req, res) => {
+  res.sendFile(path.join(__dirname, '../', 'public', 'index.html'));
+});
 
 const port = 3001;
 
