@@ -6,9 +6,10 @@ import Guests from './guests.jsx';
 class App extends Component {
   constructor(props) {
     super(props);
+    let path = window.location.pathname;
 
     this.state = {
-      roomId: 2,
+      roomId: path[path.length - 1],
       // year: 2018,
       // month: 11,
       year: new Date().getFullYear(),
