@@ -3,6 +3,8 @@ import './app.css';
 import Calendar from './calendar.jsx';
 import Guests from './guests.jsx';
 
+let serverUrl = 'http://127.0.0.1:3001';
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -46,7 +48,7 @@ class App extends Component {
   }
 
   callApi() {
-    let url = `/price/${this.state.roomId}`;
+    let url = serverUrl + `/price/${this.state.roomId}`;
     if (this.state.fromDate && this.state.toDate) {
       url += `?fromDate=${this.state.fromDate}&toDate=${this.state.toDate}`;
     } else if (this.state.fromDate) {
