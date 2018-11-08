@@ -42,7 +42,7 @@ span#perNight {
     display: inline;
 }
 
-label {
+label#formLabel {
   font-weight: 600;
   margin: 0px;
   font-size: 12px;
@@ -54,7 +54,7 @@ label {
   padding-bottom: 4px;
 }
 
-input {
+input.book {
   height: 100%;
   border: 0px;
   font-size: 14px;
@@ -62,7 +62,6 @@ input {
 
 #formFields {
   height: 190px;
-  /* border: 1px dotted #e4e4e4; */
 }
 
 #datesInput {
@@ -99,7 +98,6 @@ input#guests-input {
 
 #submitButton {
   height: 50px;
-  border: 1px dotted #e4e4e4;
 }
 
 button#book {

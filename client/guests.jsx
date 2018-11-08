@@ -10,28 +10,28 @@ class Guests extends Component {
   render() {
     return (
       <div id="guests-box">
-        <div className="age-group" id="adults">
-          <span className="age-left">Adults</span>
-          <span className="age-right">
-            <button className="circle minus">-</button>
+        <div className="book age-group" id="adults">
+          <span className="book age-left">Adults</span>
+          <span className="book age-right">
+            <button className="book circle minus">-</button>
             <span>{this.props.adults}</span>
-            <button className="circle plus">+</button>
+            <button className="book circle plus">+</button>
           </span>
         </div>
-        <div className="age-group" id="children">
-          <span className="age-left">Children</span>
-          <span className="age-right">
-            <button className="circle minus">-</button>
+        <div className="book age-group" id="children">
+          <span className="book age-left">Children</span>
+          <span className="book age-right">
+            <button className="book circle minus">-</button>
             <span>{this.props.children}</span>
-            <button className="circle plus">+</button>
+            <button className="book circle plus">+</button>
           </span>
         </div>
-        <div className="age-group" id="infants">
-          <span className="age-left">Infants</span>
-          <span className="age-right">
-            <button className="circle minus">-</button>
+        <div className="book age-group" id="infants">
+          <span className="book age-left">Infants</span>
+          <span className="book age-right">
+            <button className="book circle minus">-</button>
             <span>{this.props.infants}</span>
-            <button className="circle plus">+</button>
+            <button className="book circle plus">+</button>
           </span>
         </div>
         <div id="max-guests">
