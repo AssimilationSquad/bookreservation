@@ -64,7 +64,7 @@ class Calendar extends Component {
   renderMonthYear() {
     return (
       <div id="monthYear">
-        <strong>
+        <strong className="book ">
           {this.monthNames[this.props.month] + ' ' + this.props.year}
         </strong>
       </div>
@@ -112,7 +112,7 @@ class Calendar extends Component {
       <div id="calWrapper">
         <div id="calTop">
           <button 
-            className="change-month" 
+            className="book change-month" 
             onClick={(e) => {
               e.preventDefault();
               this.props.handleMonthChange(this.props.year, this.props.month - 1);
@@ -122,7 +122,7 @@ class Calendar extends Component {
           </button>
           {this.renderMonthYear()}
           <button 
-            className="change-month" 
+            className="book change-month" 
             onClick={(e) => { 
               e.preventDefault();
               this.props.handleMonthChange(this.props.year, this.props.month + 1); 

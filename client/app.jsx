@@ -3,7 +3,7 @@ import './app.css';
 import Calendar from './calendar.jsx';
 import Guests from './guests.jsx';
 
-let serverUrl = 'http://127.0.0.1:3001';
+// let serverUrl = 'http://127.0.0.1:3001';
 
 class App extends Component {
   constructor(props) {
@@ -48,7 +48,7 @@ class App extends Component {
   }
 
   callApi() {
-    let url = serverUrl + `/price/${this.state.roomId}`;
+    let url = `/price/${this.state.roomId}`;
     if (this.state.fromDate && this.state.toDate) {
       url += `?fromDate=${this.state.fromDate}&toDate=${this.state.toDate}`;
     } else if (this.state.fromDate) {
@@ -100,7 +100,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App" id="outerBox">
+      <div className="book" id="outerBox">
         <div id="topBox" onClick={() => { this.changeOverlay(''); }} >
           <div id="priceBox">
             <span id="price">{this.getPerNightPrice()} G </span>
@@ -111,21 +111,21 @@ class App extends Component {
 
         <form>
           <div id="formFields">
-            <label htmlFor="datesInput">Dates</label>
+            <label id="formLabel" htmlFor="datesInput">Dates</label>
             
             <div id="datesInput">
               <div id="fromDate">
-                <input type="text" onClick={() => { this.changeOverlay('calendar'); }} placeholder="Check in"></input>
+                <input className="book " type="text" onClick={() => { this.changeOverlay('calendar'); }} placeholder="Check in"></input>
               </div>
               <div id="toDate">
-                <input type="text" onClick={() => { this.changeOverlay('calendar'); }} placeholder="Check out"></input>
+                <input className="book " type="text" onClick={() => { this.changeOverlay('calendar'); }} placeholder="Check out"></input>
               </div>
             </div>
             {this.renderCalendar()}
 
-            <label htmlFor="guestsInput">Guests</label>
+            <label id="formLabel" htmlFor="guestsInput">Guests</label>
             <div id="guestsInput">
-              <input id="guests-input" readOnly type="text" value="1 Guest" onClick={() => { this.changeOverlay('guests'); }}></input>
+              <input className="book " id="guests-input" readOnly type="text" value="1 Guest" onClick={() => { this.changeOverlay('guests'); }}></input>
             </div>
             {this.renderGuests()}
             
