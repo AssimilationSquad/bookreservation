@@ -8,19 +8,20 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "start": "nodemon server/server.js",
+    "start": "node server/server.js",
     "seed": "node server/db/seed.js",
     "react-dev": "webpack -d --watch"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "mysql2": "^1.6.1",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
-    "sequelize": "^4.41.0"
+    "morgan": "^1.9.1",
+    "mysql2": "^1.6.4",
+    "sequelize": "^4.41.1"
   },
   "devDependencies": {
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",

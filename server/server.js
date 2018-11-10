@@ -5,6 +5,7 @@ const db = require('./db/db.js');
 const Op = require('sequelize').Op;
 const path = require('path');
 const morgan = require('morgan');
+const { server } = require('../config.js');
 
 
 app.use(morgan('dev'));
@@ -12,8 +13,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
 
@@ -23,7 +24,7 @@ app.get('/rooms/:roomId', (req, res) => {
   res.sendFile(path.join(__dirname, '../', 'public', 'index.html'));
 });
 
-const port = 3001;
+const port = server.port;
 
 app.listen(port, function() {
   console.log(`listening on port ${port}`);
