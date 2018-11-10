@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  book:
+    build: .
+    depends_on:
+      - 'database'
+    ports: 
+      - '3001:3001'
+
+  database:
+    image: mysql:5.7.24
+    environment: 
+      MYSQL_ROOT_PASSWORD: 'password'
+
+  # seed:
+  #   build: .
+  #   depends_on:
+  #     - 'database'
+
+# To seed database:
+# docker-compose up
+# docker run --network="bookreservation_default" -it --link bookreservation_database_1:bookreservation_database_1 --rm mysql:5.7.24 sh -c 'exec mysql -h"database" -P"3306" -uroot -p"password"'
+# CREATE DATABASE lairbnbCal;
+# docker exec -ti bookreservation_book_1 sh -c "npm run seed"
+# docker exec -ti bookreservation_book_1 sh -c "npm run seed"

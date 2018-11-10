@@ -1,6 +1,8 @@
 const db = require('./db.js');
 
 const seed = function(n) {
+  db.Property.sync();
+  db.Calendar.sync();
 
   const genRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
@@ -55,5 +57,19 @@ const seed = function(n) {
         });
     });
 };
+
+// const mysql = require('mysql2/promise');
+// const config = require('../../config.js');
+
+// mysql.createConnection({
+//   user: config.db.user,
+//   password: config.db.password
+// })
+//   .then(() => {
+//     connection.query(`CREATE DATABASE IF NOT EXISTS ${config.db.name};`)
+//       .then(() => {
+//         seed(100);
+//       });
+//   });
 
 seed(100);

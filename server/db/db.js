@@ -1,7 +1,14 @@
 const Sequelize = require('sequelize');
-const db = new Sequelize('lairbnbCal', 'root', 'password', {
-  dialect: 'mysql',
-});
+const config = require('../../config.js');
+const db = new Sequelize(
+  config.db.name, 
+  config.db.user, 
+  config.db.password, 
+  {
+    dialect: config.db.dialect,
+    host: config.db.ip,
+  }
+);
 
 var Property = db.define('Property', {
   id: {
@@ -29,8 +36,6 @@ var Calendar = db.define('Calendar', {
 Calendar.belongsTo(Property);
 Property.hasMany(Calendar);
 
-Property.sync();
-Calendar.sync();
 
 exports.Property = Property;
 exports.Calendar = Calendar;
