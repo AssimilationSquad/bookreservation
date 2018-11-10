@@ -8,7 +8,7 @@ import Guests from './guests.jsx';
 class App extends Component {
   constructor(props) {
     super(props);
-    let path = window.location.pathname;
+    let path = window.location.pathname.split('/');
 
     this.state = {
       roomId: path[path.length - 1],
